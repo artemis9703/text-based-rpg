@@ -9,7 +9,6 @@ def main():
     dead = False
 
     print("find the ancient power stone and escape the building.")
-    print("\nwhat do you do?")
 
     while room:
         print("\nwhat do you do?")
@@ -38,16 +37,18 @@ def main():
             print("you unlock the door and step out into a dimly lit hallway. it continues to the left and right, with a doorway set opposite you.") if found_key == True else print("the door is locked, no you cant punch it."), inventory.remove("key")
         elif choice == "6":
             dead = True,
+            room = False,
             print("you unscrew the vent cover and crawl in. you fall into a room full of enemy wizards and they kill you. better luck next time.") if found_screwdriver == True else print("there is a cover on the grate, held in by tiny screws."), inventory.remove("key")
         else:
             print("there are 6 options, this is not one of them")
+
     while hallway:
         print("\nwhat do you do?")
         print("1. head down the hallway to the left.")
         print("2. head down the hallway to the right")
         print("try the door opposite you.")
         choice = input("choose what to do: \n")
-        
+
     while dead:
         print("\nwhat do you do?")
         print("1. restart")
