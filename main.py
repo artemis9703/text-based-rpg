@@ -3,15 +3,17 @@ def main():
     found_note = False
     found_key = False
     found_screwdriver = False
-    in_room = True
+    room = True
+    hallway = False
     escaped = False
     dead = False
 
-    print("find the elder wand and escape the building.")
+    print("find the ancient power stone and escape the building.")
     print("\nwhat do you do?")
 
-    while in_room:
-        print("1. look around the room")
+    while room:
+        print("\nwhat do you do?")
+        print("\n1. look around the room")
         print("2. check under the bed")
         print("3. see whats in the closet")
         print("4. inspect the desk drawer")
@@ -31,13 +33,38 @@ def main():
             print("youve already looked here.") if found_key == True else print("you find a shiny gold key."), inventory.append("key"), 
             found_key = True
         elif choice == "5":
-            in_room = True,
-            print("you unlock the door and step out into a dimly lit hallway. it continues to the left and right, with a doorway set opposite you.") if found_key == True else print("the door is locked, no you cant punch it."), inventory.pop("key")
+            room = False,
+            hallway = True,
+            print("you unlock the door and step out into a dimly lit hallway. it continues to the left and right, with a doorway set opposite you.") if found_key == True else print("the door is locked, no you cant punch it."), inventory.remove("key")
         elif choice == "6":
             dead = True,
-            print("you unscrew the vent cover and crawl in. you fall into a room full of death eaters and they kill you. better luck next time.") if found_screwdriver == True else print("there is a cover on the grate, held in by tiny screws."), inventory.pop("key")
+            print("you unscrew the vent cover and crawl in. you fall into a room full of enemy wizards and they kill you. better luck next time.") if found_screwdriver == True else print("there is a cover on the grate, held in by tiny screws."), inventory.remove("key")
         else:
             print("there are 6 options, this is not one of them")
+    while hallway:
+        print("\nwhat do you do?")
+        print("1. head down the hallway to the left.")
+        print("2. head down the hallway to the right")
+        print("try the door opposite you.")
+        choice = input("choose what to do: \n")
         
+    while dead:
+        print("\nwhat do you do?")
+        print("1. restart")
+        print("2. give up and live with your failure")
+        choice = input("choose what to do: \n")
+
+        if choice == "1":
+            found_note = False,
+            found_key = False,
+            found_screwdriver = False,
+            room = True,
+            dead = False,
+            print("valiant choice, young wizard")
+        elif choice == "2":
+            print("congrats, you failed. close this tab and throw your device at the nearest wall.")
+        else:
+            print("there are 2 options, this is not one of them")
+
 if __name__ == "__main__":
     main()
