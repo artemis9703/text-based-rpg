@@ -41,11 +41,9 @@ def main():
             room = False,
             print("you unscrew the vent cover and crawl in. you fall into a room full of enemy wizards and they kill you. better luck next time.") if found_screwdriver == True else print("there is a cover on the grate, held in by tiny screws."), inventory.remove("key")
         elif choice == "7":
-            dead = True,
-            room = False,
             print("you freaked out."), exit()
         else:
-            print("there are 6 options, this is not one of them")
+            print("dude there are 7 options, this is not one of them")
 
     while hallway:
         print("\nwhat do you do?")
