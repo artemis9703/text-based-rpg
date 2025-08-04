@@ -34,27 +34,21 @@ def main():
                 print("youve already looked here.") if found_key == True else print("you find a shiny gold key."), inventory.append("key")
                 found_key = True
             elif choice == "5":
-                if found_key:
-                    print("you unlock the door and step out into a dimly lit hallway. it continues to the left and right, with a doorway set opposite you.")
-                    inventory.remove("key")
-                    room = False
-                    hallway = True
-                else:
-                    print("the door is locked, no you cant punch it.")
+                print("you unlock the door and step out into a dimly lit hallway. it continues to the left and right, with a doorway set opposite you.") if found_key == True else print("the door is locked, no you cant punch it."), inventory.remove("key")
+                room = False
+                hallway = True
             elif choice == "6":
-                if found_screwdriver:
-                    print("you unscrew the vent cover and crawl in. you fall into a room full of enemy wizards and they kill you. better luck next time.")
-                    inventory.remove("screwdriver")
-                    dead = True
-                    room = False
-                else:
-                    print("there is a cover on the grate, held in by tiny screws.")
+                print("you unscrew the vent cover and crawl in. you fall into a room full of enemy wizards and they kill you. better luck next time.") if found_screwdriver == True else print("there is a cover on the grate, held in by tiny screws."), inventory.remove("screwdriver")
+                dead = True
+                room = False
+                exit()
             elif choice == "7":
-                    print("you freaked out.")
-                    dead = True
-                    room = False
+                print("you freaked out.")
+                dead = True
+                room = False
+                exit()
             else:
-                    print("dude there are 7 options, this is not one of them")
+                print("dude there are 7 options, this is not one of them")
 
         elif hallway:
             print("\nwhat do you do?")
