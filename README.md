@@ -1,4 +1,4 @@
-# text-based-rpg
+# text based roleplay game
 
 ---
 
