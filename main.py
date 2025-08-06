@@ -1,5 +1,3 @@
-#FINISH WARDROBE AND OPPOSITE DOOR
-
 def main():
     #start room items
     found_note = False
@@ -12,8 +10,7 @@ def main():
     found_star = False
     found_circle = False
     blocks_complete = False
-    found_pw = False
-
+    
     # left door
     found_crackers = False
 
@@ -34,6 +31,7 @@ def main():
     pw = False
     fireplace = False
     closet = False
+    exit = False
     escaped = False
     dead = False
 
@@ -134,22 +132,44 @@ def main():
 
         elif opposite:
             print("\nwhat do you do?")
-            print("\n")
-            print("")
-            print("")
-            print("")
+            print("\n1. look around the room") #found_square = False found_triangle = False found_star = False found_circle = False
+            print("2. check in the desk")
+            print("3. move the painting")
+            print("4. examine the side table")
+            print("5. crawl under the bed")
+            print("6. open the closet")
             choice = input("choose what to do: \n")
 
             if choice == "1":
-
+                print("you see a desk, closet door, a bed, and a side table. this room is more decorated than the others, with elaborate paintings hanging on the walls.")
             elif choice == "2":   
-
+                if found_square == True:
+                    print("just as before, there is nothing in or on the desk.")
+                else:
+                    found_square = True
+                    print("you walk to the desk and open the drawer. nothing that you can see but as you shake the desk a bit, a small wooden square falls from the lamp shade.")
             elif choice == "3":
+                if found_triangle == True:
+
+                else:
 
             elif choice == "4":
+                if found_square == True & found_triangle == True & found_star == True & found_circle == True:
 
+                else:
+
+            elif choice == "5":
+                if found_star == True:
+
+                else:
+
+            elif choice == "6":
+                if found_circle == True:
+                    
+                else:
+            
             else:
-                print("guys there are 4 options, this is not one of them.")
+                print("guys there are 6 options, this is not one of them.")
 
         elif pw:
             print("\nwhat do you do?")
@@ -192,11 +212,22 @@ def main():
             choice = input("choose what to do: \n")
 
             if choice == "1":
-                print("as you glance around the inside ")
+                print("as you glance around the inside, a small torch flickers to life on the wall opposite you. you see a rusty metel lever to your left and another to your right. you see a slot for a circluar item with a star indent to be pressed into on the opposite wall, a clear casing covers it.")
             elif choice == "2":   
-
+                if found_coin == True:
+                    exit = True
+                    closet = False
+                    print("you tug the left lever toward you. you hear a loud click and a panel in the wall slids open. the clear casing on the circular indent slids away. you realize it is the same symbol on the strange coin you found. you push the coin into the slot and hear a loud click. the opposite wall slides away")
+                else:    
+                    print("you tug the left lever toward you. you hear a loud click and a panel in the wall slids open. the clear casing on the circular indent slids away.")
             elif choice == "3":
-
+                if found_crackers == True:
+                    found_dog = True
+                    print("a panel in the wall slids open and an angry dog steps through, snarling. you remember the crackers in your pocket and give some to the dog. the dog is now your friend.")
+                else:
+                    closet = False
+                    dead = True
+                    print("a panel in the wall slids open and an angry dog steps through, snarling. the dog kills you.")
             elif choice == "4":
                 closet = False
                 left = True
@@ -204,6 +235,10 @@ def main():
 
             else:
                 print("guys there are 4 options, this is not one of them.")
+
+        elif exit:
+            print("\nwhat do you do?")
+            print("\n1. ")
 
         elif dead:
             print("\nwhat do you do?")
@@ -220,7 +255,6 @@ def main():
                 found_star = False
                 found_circle = False
                 blocks_complete = False
-                found_pw = False
                 found_crackers = False
                 found_coin = False
                 found_dog = False
