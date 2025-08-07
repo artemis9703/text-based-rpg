@@ -9,7 +9,6 @@ def main():
     found_triangle = False
     found_star = False
     found_circle = False
-    blocks_complete = False
     
     # left door
     found_crackers = False
@@ -132,7 +131,7 @@ def main():
 
         elif opposite:
             print("\nwhat do you do?")
-            print("\n1. look around the room") #found_square = False found_triangle = False found_star = False found_circle = False
+            print("\n1. look around the room")
             print("2. check in the desk")
             print("3. move the painting")
             print("4. examine the side table")
@@ -141,7 +140,7 @@ def main():
             choice = input("choose what to do: \n")
 
             if choice == "1":
-                print("you see a desk, closet door, a bed, and a side table. this room is more decorated than the others, with elaborate paintings hanging on the walls.")
+                print("you see a desk, closet door, a bed, and a side table. this room is more decorated than the others, with an elaborate painting hanging on the wall.")
             elif choice == "2":   
                 if found_square == True:
                     print("just as before, there is nothing in or on the desk.")
@@ -150,56 +149,75 @@ def main():
                     print("you walk to the desk and open the drawer. nothing that you can see but as you shake the desk a bit, a small wooden square falls from the lamp shade.")
             elif choice == "3":
                 if found_triangle == True:
-
+                    print("you move the painting again, and it falls off the wall. oops.")
                 else:
-
+                    print("you move the painting and notice a strange bulge in the back of the canvas. you tug at it for a few seconds before the back covering comes off and a small wooden triangle falls to the floor.")
+                    found_triangle = True
             elif choice == "4":
                 if found_square == True & found_triangle == True & found_star == True & found_circle == True:
-
+                    pw = True
+                    opposite = False
+                    print("you push the four blocks into their individual slots and another platform rises from the surface of the desk. this one has a keypad and space for 8 digits.")
                 else:
-
+                    print("you examine the table and notice four oddly placed dents in the surface. on closer inspection, you realize they are slots for four shapes: square, triangle, star, and circle.")
             elif choice == "5":
                 if found_star == True:
-
+                    print("you dont find anything else. you must really like it under that bed.")
                 else:
-
+                    found_star = True
+                    print("you crawl under the bed and lie on your back. a small wooden star falls onto your face, clearly hidden under there. interesting.")
             elif choice == "6":
                 if found_circle == True:
-                    
+                    print("you open the closet again and look inside. maybe that old bowler hat would fit you, but nothing else.")
                 else:
-            
+                    found_circle == True
+                    print("you open the closet and rummage through the old clothes. something hits your foot, its a small wooden circle.")
             else:
                 print("guys there are 6 options, this is not one of them.")
 
         elif pw:
             print("\nwhat do you do?")
-            print("\n")
-            print("")
-            print("")
+            print("\n1. enter a password")
+            print("2. step away from the side table")
             choice = input("choose what to do: \n")
 
             if choice == "1":
+                choice = input("pick an 8 digit combination.")
 
-            elif choice == "2":   
-
-            elif choice == "3":
-
+                if choice == "71526483":
+                    pw = False
+                    exit = True
+                    print("this is the correct password. the table falls through the floor, and steps rise. you take them down into some kind of basement.")
+                else: 
+                    print("it blinks red and your combination disappears. incorrect, i guess.")
+            elif choice == "2":
+                pw = False
+                opposite = True
+                print("you leave the side table and stand in the center of the room.")
             else:
-                print("guys there are 3 options, this is not one of them.")
+                print("guys there are 2 options, this is not one of them.")
 
         elif fireplace:
             print("\nwhat do you do?")
-            print("\n")
-            print("")
-            print("")
+            print("\n1. push the right button")
+            print("2. push the left button")
+            print("3. leave the fireplace")
             choice = input("choose what to do: \n")
 
             if choice == "1":
-
+                fireplace = False
+                dead = True
+                print("you push the right button, and an arrow shoots out of a previously un-noticed slot in the wall. you are hit and die.")
             elif choice == "2":   
-
+                if found_coin == True:
+                    print("the same slot in the ceiling opens, but nothing more falls out.")
+                else:
+                    found_coin = True
+                    print("you push the left button and a slot in the ceiling slides open. a gold coin with a raised star on one side falls into your palm. the ceiling closes.")
             elif choice == "3":
-
+                fireplace = False
+                opposite = True
+                print("you leave the strange hollowed out fireplace and return to the room.")
             else:
                 print("guys there are 3 options, this is not one of them.")
 
@@ -217,7 +235,7 @@ def main():
                 if found_coin == True:
                     exit = True
                     closet = False
-                    print("you tug the left lever toward you. you hear a loud click and a panel in the wall slids open. the clear casing on the circular indent slids away. you realize it is the same symbol on the strange coin you found. you push the coin into the slot and hear a loud click. the opposite wall slides away")
+                    print("you tug the left lever toward you. you hear a loud click and a panel in the wall slids open. the clear casing on the circular indent slids away. you realize it is the same symbol on the strange coin you found. you push the coin into the slot and hear a loud click. the opposite wall slides away.")
                 else:    
                     print("you tug the left lever toward you. you hear a loud click and a panel in the wall slids open. the clear casing on the circular indent slids away.")
             elif choice == "3":
@@ -254,7 +272,6 @@ def main():
                 found_triangle = False
                 found_star = False
                 found_circle = False
-                blocks_complete = False
                 found_crackers = False
                 found_coin = False
                 found_dog = False
