@@ -1,3 +1,5 @@
+#ADD EXIT
+
 def main():
     #start room items
     found_note = False
@@ -34,7 +36,7 @@ def main():
     escaped = False
     dead = False
 
-    print("if you want to pick option 1. or 2. and so on, then enter 1 or 2 and so on as your answer.\nyou are a find the ancient power stone and escape the building.")
+    print("if you want to pick option 1. or 2. and so on, then enter 1 or 2 and so on as your answer.\nyou are a wizard trying to find the ancient power stone and escape the building.")
 
     while True:
         if room:
@@ -113,6 +115,7 @@ def main():
             print("2. look in the wardrobe")
             print("3. check in the desk")
             print("4. look under the bed")
+            print("5. leave the room")
             choice = input("choose what to do: \n")
 
             if choice == "1":
@@ -126,8 +129,12 @@ def main():
                 found_crackers = True
             elif choice == "4":
                 print("you get a spiderweb on your face, but nothing else.")
+            elif choice == "5":
+                hallway = True
+                left = False
+                print("you leave the room and re enter the hallway.")
             else:
-                print("guys there are 4 options, this is not one of them.")                                             
+                print("guys there are 5 options, this is not one of them.")                                             
 
         elif opposite:
             print("\nwhat do you do?")
@@ -137,6 +144,7 @@ def main():
             print("4. examine the side table")
             print("5. crawl under the bed")
             print("6. open the closet")
+            print("7. leave the room")
             choice = input("choose what to do: \n")
 
             if choice == "1":
@@ -172,8 +180,12 @@ def main():
                 else:
                     found_circle == True
                     print("you open the closet and rummage through the old clothes. something hits your foot, its a small wooden circle.")
+            elif choice == "7":
+                hallway = True
+                opposite = False
+                print("you leave the room and re enter the hallway.")
             else:
-                print("guys there are 6 options, this is not one of them.")
+                print("guys there are 7 options, this is not one of them.")
 
         elif pw:
             print("\nwhat do you do?")
