@@ -1,5 +1,3 @@
-#ADD EXIT
-
 def main():
     #start room items
     found_note = False
