@@ -48,7 +48,7 @@ def main():
             print("6. examine an air vent")
             print("7. freak out")
             choice = input("choose what to do: \n")
-
+            
             if choice == "1":
                 print("you are in a small room. the room contains a bed, a closet, a small desk with one drawer, and an air vent. the door is closed. the furniture looks old and the room isnt decorated.")
             elif choice == "2": 
@@ -80,6 +80,7 @@ def main():
                 room = False
             else:
                 print("guys there are 7 options, this is not one of them.")
+            
 
         elif hallway:
             print("\nwhat do you do?")
@@ -183,7 +184,7 @@ def main():
                 if found_circle == True:
                     print("you open the closet again and look inside. maybe that old bowler hat would fit you, but nothing else.")
                 else:
-                    found_circle == True
+                    found_circle = True
                     print("you open the closet and rummage through the old clothes. something hits your foot, its a small wooden circle.")
             elif choice == "7":
                 hallway = True
